@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/client'
 import { fetchAnimeData, AnimeData } from '@/queries/fetchAnimeData'
+import { Header } from '@/components/Header/Header'
 
 export default function Home() {
   const { data } = useQuery<AnimeData>(fetchAnimeData, {
@@ -8,5 +9,9 @@ export default function Home() {
 
   console.log(data?.searchWorks.nodes)
 
-  return
+  return (
+    <>
+      <Header />
+    </>
+  )
 }
