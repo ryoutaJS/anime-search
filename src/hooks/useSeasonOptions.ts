@@ -1,19 +1,23 @@
 export function useSeasonOptions() {
-  const getYears = (): number[] => {
-    const date = new Date()
+  const date = new Date()
+
+  const getYears = (): string[] => {
     const startYear = 2018
     const nextYear = date.getFullYear() + 1
     const years = []
 
     for (let year = startYear; year <= nextYear; year++) {
-      years.push(year)
+      years.push(year.toString())
     }
 
     return years
   }
 
+  const getCurrentYear = (): string => {
+    return date.getFullYear().toString()
+  }
+
   const getCurrentSeason = (): string => {
-    const date = new Date()
     const month = date.getMonth() + 1
 
     switch (month) {
@@ -38,5 +42,5 @@ export function useSeasonOptions() {
     }
   }
 
-  return { getYears, getCurrentSeason }
+  return { getYears, getCurrentYear, getCurrentSeason }
 }

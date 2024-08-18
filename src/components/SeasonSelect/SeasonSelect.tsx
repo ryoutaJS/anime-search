@@ -4,18 +4,20 @@ import { SearchIcon } from '@chakra-ui/icons'
 import { useSeasonOptions } from '@/hooks/useSeasonOptions'
 
 export function SeasonSelect() {
-  const { getYears, getCurrentSeason } = useSeasonOptions()
+  const { getYears, getCurrentYear, getCurrentSeason } = useSeasonOptions()
 
-  const years: number[] = getYears()
+  const years: string[] = getYears()
+  const currentYear: string = getCurrentYear()
   const currentSeason: string = getCurrentSeason()
 
-  const [season, setSeason] = useState<string>(currentSeason)
+  const [year, setYear] = useState(currentYear)
+  const [season, setSeason] = useState(currentSeason)
 
   return (
     <Center>
       <form>
         <HStack>
-          <Select w={100}>
+          <Select w={100} defaultValue={currentYear} onChange={e => setYear(e.target.value)}>
             {years.map(year => (
               <option value={year}>{year}</option>
             ))}
