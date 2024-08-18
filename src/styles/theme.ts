@@ -19,6 +19,13 @@ export const customTheme = extendTheme(
           },
         },
       },
+      Select: {
+        baseStyle: {
+          field: {
+            boxShadow: 'sm',
+          },
+        },
+      },
     },
   }
 )
