@@ -3,7 +3,7 @@ import { fetchAnimeData, AnimeData } from '@/queries/fetchAnimeData'
 
 export default function Home() {
   const { data } = useQuery<AnimeData>(fetchAnimeData, {
-    variables: { season: '2024-spring' },
+    variables: { title: '鬼滅の刃' },
   })
 
   console.log(data?.searchWorks.nodes)
