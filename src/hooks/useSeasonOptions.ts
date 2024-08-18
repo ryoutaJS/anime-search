@@ -1,4 +1,17 @@
 export function useSeasonOptions() {
+  const getYears = (): number[] => {
+    const date = new Date()
+    const startYear = 2018
+    const nextYear = date.getFullYear() + 1
+    const years = []
+
+    for (let year = startYear; year <= nextYear; year++) {
+      years.push(year)
+    }
+
+    return years
+  }
+
   const getCurrentSeason = (): string => {
     const date = new Date()
     const month = date.getMonth() + 1
@@ -25,5 +38,5 @@ export function useSeasonOptions() {
     }
   }
 
-  return { getCurrentSeason }
+  return { getYears, getCurrentSeason }
 }
