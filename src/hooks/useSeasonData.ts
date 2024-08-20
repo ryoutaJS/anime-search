@@ -1,4 +1,4 @@
-export function useSeasonOptions() {
+export function useSeasonData() {
   const date = new Date()
 
   const getYears = (): string[] => {
@@ -42,5 +42,5 @@ export function useSeasonOptions() {
     }
   }
 
-  return { getYears, getCurrentYear, getCurrentSeason }
+  return { years: getYears(), currentYear: getCurrentYear(), currentSeason: getCurrentSeason() }
 }
