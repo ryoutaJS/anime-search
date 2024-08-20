@@ -1,17 +1,29 @@
 import { useSearchParams } from 'next/navigation'
 import { useQuery } from '@apollo/client'
-import { fetchAnimeData, AnimeData, Anime } from '@/queries/fetchAnimeData'
+import { fetchAnimeData, AnimeData } from '@/queries/fetchAnimeData'
 import { useSeasonData } from '@/hooks/useSeasonData'
+
+interface Variables {
+  season?: string
+  title?: string
+}
 
 export function useFetchAnimeData() {
   const { currentYear, currentSeason } = useSeasonData()
 
   const searchParams = useSearchParams()
-  const searchSeason = searchParams.get('season')
+  const season = searchParams.get('season')
+  const keyword = searchParams.get('keyword')
+  const variables: Variables = {}
 
-  let variables = { season: `${currentYear}-${currentSeason}` }
-  if (searchSeason) {
-    variables = { season: searchSeason }
+  if (keyword) {
+    variables.title = keyword
+  }
+  if (season) {
+    variables.season = season
+  }
+  if (!season && !keyword) {
+    variables.season = `${currentYear}-${currentSeason}`
   }
 
   const { data } = useQuery<AnimeData>(fetchAnimeData, {
