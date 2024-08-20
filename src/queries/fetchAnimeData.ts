@@ -13,6 +13,7 @@ export interface Anime {
   seasonYear: number | null
   media: string
   officialSiteUrl: string | null
+  twitterUsername: string | null
   image: {
     facebookOgImageUrl: string | null
   } | null
@@ -28,6 +29,7 @@ export const fetchAnimeData = gql`
         seasonName
         media
         officialSiteUrl
+        twitterUsername
         image {
           facebookOgImageUrl
         }

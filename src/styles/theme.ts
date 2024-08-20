@@ -1,4 +1,4 @@
-import { extendTheme, withDefaultSize } from '@chakra-ui/react'
+import { extendTheme, Textarea, withDefaultSize } from '@chakra-ui/react'
 
 export const customTheme = extendTheme(
   withDefaultSize({
@@ -24,6 +24,11 @@ export const customTheme = extendTheme(
           field: {
             boxShadow: 'sm',
           },
+        },
+      },
+      Text: {
+        baseStyle: {
+          fontSize: 'xl',
         },
       },
     },
