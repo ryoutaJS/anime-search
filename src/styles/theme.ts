@@ -11,6 +11,10 @@ export const customTheme = extendTheme(
         body: {
           bg: '#fdfdfd',
         },
+        form: {
+          maxWidth: '400px',
+          width: '100%',
+        },
       },
     },
     components: {

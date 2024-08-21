@@ -21,7 +21,7 @@ export function SearchBar() {
 
   return (
     <form onSubmit={onSubmit}>
-      <InputGroup maxW={500}>
+      <InputGroup>
         <Input
           placeholder="アニメのタイトルを入力 （例）鬼滅の刃"
           value={keyword}
