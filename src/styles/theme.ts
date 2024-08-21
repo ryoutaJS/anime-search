@@ -6,6 +6,13 @@ export const customTheme = extendTheme(
     components: ['Input'],
   }),
   {
+    styles: {
+      global: {
+        body: {
+          bg: '#fdfdfd',
+        },
+      },
+    },
     components: {
       Heading: {
         baseStyle: {
