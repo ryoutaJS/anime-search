@@ -2,7 +2,7 @@ import { Heading } from '@chakra-ui/layout'
 import { Box } from '@chakra-ui/react'
 import { SearchBar } from '../SearchBar/SearchBar'
 
-const headerStyle = {
+Box.defaultProps = {
   border: '1px',
   borderColor: 'gray.300',
   p: 4,
@@ -13,11 +13,9 @@ const headerStyle = {
 
 export function Header() {
   return (
-    <>
-      <Box sx={headerStyle}>
-        <Heading>Anime Search</Heading>
-        <SearchBar />
-      </Box>
-    </>
+    <Box>
+      <Heading>Anime Search</Heading>
+      <SearchBar />
+    </Box>
   )
 }
