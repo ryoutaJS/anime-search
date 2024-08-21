@@ -2,6 +2,13 @@ import { FormEvent, useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
+import { shadowValue } from '@/styles/theme'
+
+Input.defaultProps = {
+  bg: 'white',
+  size: 'lg',
+  shadow: shadowValue,
+}
 
 export function SearchBar() {
   const router = useRouter()
