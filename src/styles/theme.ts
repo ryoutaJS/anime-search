@@ -1,36 +1,29 @@
-import { extendTheme, Textarea, withDefaultSize } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 
-export const customTheme = extendTheme(
-  withDefaultSize({
-    size: 'lg',
-    components: ['Input'],
-  }),
-  {
-    components: {
-      Heading: {
-        baseStyle: {
-          fontFamily: 'sans-serif',
-        },
+export const shadowValue = '0px 0px 6px 3px #e8e8e8'
+
+export const customTheme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: '#fdfdfd',
       },
-      Input: {
-        baseStyle: {
-          field: {
-            boxShadow: 'sm',
-          },
-        },
-      },
-      Select: {
-        baseStyle: {
-          field: {
-            boxShadow: 'sm',
-          },
-        },
-      },
-      Text: {
-        baseStyle: {
-          fontSize: 'xl',
-        },
+      form: {
+        maxWidth: '400px',
+        width: '100%',
       },
     },
-  }
-)
+  },
+  components: {
+    Heading: {
+      baseStyle: {
+        fontFamily: 'sans-serif',
+      },
+    },
+    Text: {
+      baseStyle: {
+        fontSize: 'xl',
+      },
+    },
+  },
+})

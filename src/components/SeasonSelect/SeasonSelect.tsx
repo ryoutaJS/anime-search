@@ -1,8 +1,22 @@
 import { FormEvent, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Button, Center, HStack, Select } from '@chakra-ui/react'
+import { IconButton, Center, HStack, Select } from '@chakra-ui/react'
 import { SearchIcon } from '@chakra-ui/icons'
 import { useSeasonData } from '@/hooks/useSeasonData'
+import { shadowValue } from '@/styles/theme'
+
+Select.defaultProps = {
+  bg: 'white',
+  size: 'lg',
+  shadow: shadowValue,
+}
+
+IconButton.defaultProps = {
+  size: 'lg',
+  colorScheme: 'twitter',
+  shadow: shadowValue,
+  icon: <SearchIcon />,
+}
 
 export function SeasonSelect() {
   const router = useRouter()
@@ -33,9 +47,7 @@ export function SeasonSelect() {
             <option value="winter">冬シーズン</option>
           </Select>
 
-          <Button colorScheme="twitter" type="submit">
-            <SearchIcon />
-          </Button>
+          <IconButton type="submit" aria-label="Search" />
         </HStack>
       </form>
     </Center>
