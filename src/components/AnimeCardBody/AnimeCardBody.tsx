@@ -18,7 +18,11 @@ interface Props {
 export function AnimeCardBody({ anime }: Props) {
   return (
     <CardBody>
-      <Image src={anime.image?.facebookOgImageUrl || 'images/no-image.png'} alt={anime.title} />
+      <Image
+        src={anime.image?.facebookOgImageUrl || 'images/no-image.png'}
+        alt={anime.title}
+        width="100%"
+      />
 
       <Heading>
         {anime.title}
