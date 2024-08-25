@@ -1,5 +1,5 @@
 import { Anime } from '@/queries/fetchAnimeData'
-import { CardBody, Heading, Badge, Image, Text } from '@chakra-ui/react'
+import { CardBody, Heading, Badge, Image, Text, Flex } from '@chakra-ui/react'
 
 Heading.defaultProps = {
   size: 'lg',
@@ -9,6 +9,11 @@ Heading.defaultProps = {
 Badge.defaultProps = {
   fontSize: 'lg',
   ml: 2,
+}
+
+Flex.defaultProps = {
+  height: { md: '60px' },
+  alignItems: 'center',
 }
 
 interface Props {
@@ -24,10 +29,12 @@ export function AnimeCardBody({ anime }: Props) {
         width="100%"
       />
 
-      <Heading>
-        {anime.title}
-        <Badge>{anime.media}</Badge>
-      </Heading>
+      <Flex>
+        <Heading size="md">
+          {anime.title}
+          <Badge>{anime.media}</Badge>
+        </Heading>
+      </Flex>
 
       {anime.seasonYear && (
         <Text>
