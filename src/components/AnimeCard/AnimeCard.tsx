@@ -4,10 +4,15 @@ import { Anime } from '@/queries/fetchAnimeData'
 import { AnimeCardBody } from '../AnimeCardBody/AnimeCardBody'
 import { AnimeCardFooter } from '../AnimeCardFooter/AnimeCardFooter'
 import { LoadingIndicator } from '../LoadingIndicator/LoadingIndicator'
-import { Card } from '@chakra-ui/react'
+import { Card, Grid } from '@chakra-ui/react'
+
+Grid.defaultProps = {
+  mt: 6,
+  gap: 6,
+  templateColumns: { base: '1fr', md: '1fr 1fr' },
+}
 
 Card.defaultProps = {
-  my: 5,
   shadow: shadowValue,
 }
 
@@ -19,13 +24,13 @@ export function AnimeCard() {
   }
 
   return (
-    <>
+    <Grid>
       {data?.searchWorks.nodes.map((anime: Anime) => (
         <Card key={anime.annictId}>
           <AnimeCardBody anime={anime} />
           <AnimeCardFooter anime={anime} />
         </Card>
       ))}
-    </>
+    </Grid>
   )
 }
