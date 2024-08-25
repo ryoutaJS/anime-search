@@ -26,9 +26,9 @@ export function useFetchAnimeData() {
     variables.season = `${currentYear}-${currentSeason}`
   }
 
-  const { data } = useQuery<AnimeData>(fetchAnimeData, {
+  const { loading, data } = useQuery<AnimeData>(fetchAnimeData, {
     variables: variables,
   })
 
-  return { data }
+  return { loading, data }
 }
