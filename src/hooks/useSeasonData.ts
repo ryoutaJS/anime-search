@@ -42,5 +42,25 @@ export function useSeasonData() {
     }
   }
 
-  return { years: getYears(), currentYear: getCurrentYear(), currentSeason: getCurrentSeason() }
+  const convertSeasonName = (seasonName: string | null) => {
+    switch (seasonName) {
+      case 'SPRING':
+        return '春'
+      case 'SUMMER':
+        return '夏'
+      case 'AUTUMN':
+        return '秋'
+      case 'WINTER':
+        return '冬'
+      default:
+        return seasonName
+    }
+  }
+
+  return {
+    years: getYears(),
+    currentYear: getCurrentYear(),
+    currentSeason: getCurrentSeason(),
+    convertSeasonName,
+  }
 }

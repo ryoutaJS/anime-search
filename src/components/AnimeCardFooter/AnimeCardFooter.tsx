@@ -4,6 +4,10 @@ import { CardFooter, Button, ButtonGroup } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { FaTwitter } from 'react-icons/fa'
 
+CardFooter.defaultProps = {
+  pt: 1,
+}
+
 interface Props {
   anime: Anime
 }
