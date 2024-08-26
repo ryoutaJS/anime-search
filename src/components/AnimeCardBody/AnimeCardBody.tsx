@@ -1,4 +1,5 @@
 import { Anime } from '@/queries/fetchAnimeData'
+import { useSeasonData } from '@/hooks/useSeasonData'
 import { CardBody, Heading, Badge, Image, Text, Flex } from '@chakra-ui/react'
 
 Heading.defaultProps = {
@@ -26,6 +27,8 @@ interface Props {
 }
 
 export function AnimeCardBody({ anime }: Props) {
+  const { convertSeasonName } = useSeasonData()
+
   return (
     <CardBody>
       <Image
@@ -45,7 +48,7 @@ export function AnimeCardBody({ anime }: Props) {
 
       {anime.seasonYear && (
         <Text>
-          {anime.seasonYear}年{anime.seasonName}
+          {anime.seasonYear}年{convertSeasonName(anime.seasonName)}
         </Text>
       )}
     </CardBody>
