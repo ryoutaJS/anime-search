@@ -18,7 +18,7 @@ IconButton.defaultProps = {
   icon: <SearchIcon />,
 }
 
-export function SeasonSelect() {
+export function SelectSeason() {
   const router = useRouter()
   const { years, currentYear, currentSeason } = useSeasonData()
 

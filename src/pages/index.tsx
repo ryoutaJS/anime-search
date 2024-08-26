@@ -1,6 +1,6 @@
 import { AnimeCard } from '@/components/AnimeCard/AnimeCard'
 import { Header } from '@/components/Header/Header'
-import { SeasonSelect } from '@/components/SeasonSelect/SeasonSelect'
+import { SelectSeason } from '@/components/SelectSeason/SelectSeason'
 import { Container } from '@chakra-ui/react'
 
 Container.defaultProps = {
@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <Header />
       <Container>
-        <SeasonSelect />
+        <SelectSeason />
         <AnimeCard />
       </Container>
     </>
