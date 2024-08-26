@@ -21,13 +21,13 @@ export function SearchBar() {
     }
   }, [searchParams])
 
-  const onSubmit = (e: FormEvent) => {
+  const onSearch = (e: FormEvent) => {
     e.preventDefault()
     router.push(`/?keyword=${keyword}`)
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSearch}>
       <InputGroup>
         <Input
           placeholder="アニメのタイトルを入力 （例）鬼滅の刃"

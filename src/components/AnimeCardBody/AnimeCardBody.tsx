@@ -19,6 +19,7 @@ Flex.defaultProps = {
 
 Image.defaultProps = {
   height: { md: 220, lg: 280 },
+  width: '100%',
   objectFit: 'contain',
 }
 
