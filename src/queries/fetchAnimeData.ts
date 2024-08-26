@@ -21,7 +21,11 @@ export interface Anime {
 
 export const fetchAnimeData = gql`
   query GetAnimeList($title: [String!], $season: [String!]) {
-    searchWorks(titles: $title, seasons: $season) {
+    searchWorks(
+      titles: $title
+      seasons: $season
+      orderBy: { field: WATCHERS_COUNT, direction: DESC }
+    ) {
       nodes {
         annictId
         title
