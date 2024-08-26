@@ -16,6 +16,11 @@ Flex.defaultProps = {
   alignItems: 'center',
 }
 
+Image.defaultProps = {
+  height: { md: 220, lg: 280 },
+  objectFit: 'contain',
+}
+
 interface Props {
   anime: Anime
 }
@@ -26,7 +31,9 @@ export function AnimeCardBody({ anime }: Props) {
       <Image
         src={anime.image?.facebookOgImageUrl || 'images/no-image.png'}
         alt={anime.title}
-        width="100%"
+        onError={e => {
+          e.currentTarget.src = 'images/no-image.png'
+        }}
       />
 
       <Flex>
