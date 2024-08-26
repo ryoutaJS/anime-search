@@ -5,7 +5,7 @@ import { Container } from '@chakra-ui/react'
 
 Container.defaultProps = {
   mt: 5,
-  maxW: 800,
+  maxW: 1100,
 }
 
 export default function Home() {
