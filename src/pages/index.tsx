@@ -4,7 +4,7 @@ import { SeasonSelect } from '@/components/SeasonSelect/SeasonSelect'
 import { Container } from '@chakra-ui/react'
 
 Container.defaultProps = {
-  mt: 5,
+  my: 5,
   maxW: 1100,
 }
 
