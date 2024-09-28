@@ -39,10 +39,10 @@ export function SelectSeason() {
         </Select>
 
         <Select w={140} defaultValue={currentSeason} onChange={e => setSeason(e.target.value)}>
-          <option value="spring">春シーズン</option>
-          <option value="summer">夏シーズン</option>
-          <option value="autumn">秋シーズン</option>
-          <option value="winter">冬シーズン</option>
+          <option value="winter">1月〜3月</option>
+          <option value="spring">4月〜6月</option>
+          <option value="summer">7月〜9月</option>
+          <option value="autumn">10月〜12月</option>
         </Select>
 
         <IconButton type="submit" aria-label="Search" onClick={onSearch} />
