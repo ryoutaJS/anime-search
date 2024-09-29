@@ -1,6 +1,7 @@
 import { AnimeCard } from '@/components/AnimeCard/AnimeCard'
 import { Header } from '@/components/Header/Header'
 import { SelectSeason } from '@/components/SelectSeason/SelectSeason'
+import { ScrollToTop } from '@/components/ScrollToTop/ScrollToTop'
 import { Container } from '@chakra-ui/react'
 
 Container.defaultProps = {
@@ -16,6 +17,7 @@ export default function Home() {
         <SelectSeason />
         <AnimeCard />
       </Container>
+      <ScrollToTop />
     </>
   )
 }
