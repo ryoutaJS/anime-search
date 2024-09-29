@@ -12,6 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={customTheme}>
         <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/images/anime-search.png" />
         </Head>
 
         <DefaultSeo />
